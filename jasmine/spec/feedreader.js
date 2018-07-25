@@ -80,17 +80,20 @@ $(function() {
         });
         /* this test checks that when the loadfeed function is called and
         * completed that there is at least a single entry in the .feed container.
-        * It does it by checking that the textcontent is not 0.
+        * It does it by checking that the textcontent is not 0. I used some
+        * help from Randy L's comments on slack to get this test figured out
+        * with the loadFeed function.
         */
         it('has an entry', function(){
-            const feed = document.querySelector(".entry").textContent;
+            const feed = document.querySelector('.entry').textContent;
             expect(feed.length).not.toBe(0);
         });
     });
 
     /* for this test we call the loadfeed function two times and save
     * the textContent to a startFeed variable the first time and an
-    * endFeed variable the second time.
+    * endFeed variable the second time. I used some help on slack to get
+    *started with this test.
     */
     describe('New Feed Selection', function(){
         var startFeed;
