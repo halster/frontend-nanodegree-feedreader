@@ -81,8 +81,9 @@ $(function() {
         /* this test checks that when the loadfeed function is called and
         * completed that there is at least a single entry in the .feed container.
         * It does it by checking that the textcontent is not 0. I used some
-        * help from Randy L's comments on slack to get this test figured out
+        * help from Randy L's comments and code on slack to get this test figured out
         * with the loadFeed function.
+        * https://gwgnanodegrees.slack.com/archives/CAUP0T3GU/p1532116857000108
         */
         it('has an entry', function(){
             const feed = document.querySelector('.entry').textContent;
