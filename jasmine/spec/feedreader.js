@@ -86,7 +86,7 @@ $(function() {
         * https://gwgnanodegrees.slack.com/archives/CAUP0T3GU/p1532116857000108
         */
         it('has an entry', function(){
-            const feed = document.querySelector('.entry').textContent;
+            const feed = document.querySelector('.feed .entry').textContent;
             expect(feed.length).not.toBe(0);
         });
     });
@@ -102,22 +102,20 @@ $(function() {
         beforeEach(function(done){
           loadFeed(0, function(){
             startFeed=document.querySelector('.feed').textContent;
-            done();
-          });
-          loadFeed(1, function(){
-            endFeed=document.querySelector('.feed').textContent;
-            done();
+
+            loadFeed(1, function(){
+              endFeed=document.querySelector('.feed').textContent;
+              done();
+            });
           });
         });
-
-      /* now we can check that the two variables are not the same which
-      * which signifies that the feed has changed.
-      */
-
-      it('updates with new feed', function(){
-        expect(startFeed).not.toBe(endFeed);
-      });
-
+        it('updates with new feed', function(){
+          expect(startFeed).not.toBe(endFeed);
+        });
     });
+    /* now we can check that the two variables are not the same which
+    * which signifies that the feed has changed.
+    */
+
 
 }());
